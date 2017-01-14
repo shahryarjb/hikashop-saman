@@ -125,8 +125,8 @@ class plgHikashoppaymentSaman extends hikashopPaymentPlugin {
 						if ($resultCode == $price) {
 							$msg= $this->getGateMsg(1); 
 							$history->notified = 1;
-							$history->data =  $trackingCode;
-							$this->modifyOrder($orderId, 'confirmed', $trackingCode, true); 
+							$history->data = 'شماره پیگیری '.  $trackingCode;
+							$this->modifyOrder($orderId, 'confirmed', $history, true); 
 							$app->redirect($return_url, '<h2>'.$msg.'</h2>'.'<h3>'.'شماره پیگری '. $trackingCode  .'</h3>' , $msgType='Message'); 
 						}
 						else {
